@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1..1000&display=swap');
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+#telaInicial{
+    display: block;
+}
+
+#escolherDesafio{
+    display: none;
+}
+
+#desafio{
+    display: none;
+}
+
+
+body{ 
+    background-image: url('../midias/img/fundo.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: black;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.content{ 
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    margin:100px auto;
+    text-align: center;  
+    width: 70vw;
+    padding: 0px 0px;
+}
+
+h1{ 
+    font-size: 4rem;
+    margin-bottom: 50px;
+    font-family: "Ysabeau SC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    line-height: 50px;
+}
+
+h2{
+    font-size: 2rem;
+    margin-bottom: 50px;
+    font-family: "Ysabeau SC", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+p{
+    margin: 20px 0px;
+    font-size: 1.5rem;
+    font-family: "Ysabeau SC", sans-serif;
+    font-weight: 500;
+}
+
+button{
+    margin: 0px auto;
+    width: 200px;
+    padding: 20px;
+    cursor: pointer;
+    background-color: brown;
+    border: none;
+    color: white;
+    font-family: "Ysabeau SC", sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+button:hover{
+    opacity: 1;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.3);
+}
+
+div#botoes{ 
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.Patch{
+    background-color: rgba(4,187,99,0.3);
+    padding: 20px;
+}
+
+.Bug{
+    background-color: rgba(246, 86, 0, 0.3);
+    padding: 20px;
+}
+
+span.material-symbols-outlined {
+    position:fixed;
+    top: 50px;
+    left:20px;
+    padding:10px;
+    background-color: rgb(240, 164, 71);
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+span.material-symbols-outlined.recarregar{
+    top: 100px;
+    left:20px;
+
+}
+
+span.material-symbols-outlined:hover {
+    opacity: 1;
+}
+
+#divdesafio{
+    border: 2px dashed rgb(161, 91, 0);
+    padding: 10px 20px;
+}
+
+footer{
+    text-align: center;
+    cursor: pointer;
+}
+
+@media(max-width: 600px){
+    h1{ 
+        font-size: 2rem;
+        margin-bottom: 50px;
+        font-family: "Ysabeau SC", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        font-style: normal;
+        line-height: 50px;
+    }
+
+    h2{
+        font-size: 1.5rem;
+        margin-bottom: 50px;
+        font-family: "Ysabeau SC", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+    }
+
+   
+    
+}
