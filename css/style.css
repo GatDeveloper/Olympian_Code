@@ -139,7 +139,8 @@ footer{
     body{
         background-image: url(../midias/img/fundoCel.jpg);
         background-attachment: inherit;
-        
+        padding: 0px 0px;
+
     }
 
 
