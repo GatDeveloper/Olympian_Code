@@ -132,7 +132,17 @@ footer{
     cursor: pointer;
 }
 
+
 @media(max-width: 600px){
+
+
+    body{
+        background-image: url(../midias/img/fundoCel.jpg);
+        background-attachment: inherit;
+        
+    }
+
+
     h1{ 
         font-size: 2rem;
         margin-bottom: 50px;
