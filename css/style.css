@@ -21,11 +21,11 @@
 
 
 body{ 
-    background-image: url('../midias/img/fundo.png');
+    background-image: url('../midias/img/fundo.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-color: black;
-    padding: 10px 0px;
+    padding: 50px 0px;
     display: flex;
     flex-direction: column;
 }
@@ -151,6 +151,7 @@ footer{
         font-style: normal;
     }
 
+    
    
     
 }
