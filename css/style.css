@@ -25,7 +25,7 @@ body{
     background-size: cover;
     background-attachment: fixed;
     background-color: black;
-    padding: 50px 0px;
+    padding: 0px 0px 50px 0px;
     display: flex;
     flex-direction: column;
 }
@@ -35,7 +35,7 @@ body{
     display:flex;
     flex-direction: column;
     align-content: center;
-    margin:100px auto;
+    margin:50px auto;
     text-align: center;  
     width: 70vw;
     padding: 0px 0px;
@@ -130,6 +130,8 @@ span.material-symbols-outlined:hover {
 footer{
     text-align: center;
     cursor: pointer;
+    margin:50px auto;
+
 }
 
 
