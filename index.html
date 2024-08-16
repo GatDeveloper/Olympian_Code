@@ -19,13 +19,13 @@
 
         <main class="container"> 
 
-            <section id='telaInicial' class="content"> 
+            <section id='telaInicial' class="content" tabindex="1"> 
 
                 <h1> Olympian Code </h1>
                 
                 <p>Bem-vindo(a) às Olimpíadas de código! <br>Nesta jornada épica, você enfrentará uma série de desafios que testarão suas habilidades em HTML, CSS e JavaScript.</p>
                 
-                <p>Cada desafio libera um Patch dos deuses e um Bug do submundo. Caso esteja confuso, leia as <strong id="ajuda" class="ajuda"> instruções divinas </strong>. <br>Monte a estrutura, sobreviva e se torne um verdadeiro Dev web.</p> 
+                <p>Cada desafio libera um Patch dos deuses e um Bug do submundo. Caso esteja confuso, leia as <strong id="ajuda" class="ajuda" tabindex="2"> instruções divinas </strong>. <br>Monte a estrutura, sobreviva e se torne um verdadeiro Dev web.</p> 
                 
                 <p><strong> Boa sorte, herói! </strong></p><br><br><br>
                 
@@ -33,9 +33,9 @@
                 <button id="comecar"> COMEÇAR </button>
             </section>
 
-            <section id="escolherDesafio" class="content"> 
+            <section id="escolherDesafio" class="content" tabindex="3"> 
 
-                <span id="voltarEscolher" class="material-symbols-outlined voltar">
+                <span id="voltarEscolher" class="material-symbols-outlined voltar" tabindex="4">
                     keyboard_backspace
                 </span> 
              
@@ -53,18 +53,18 @@
                 
                 <header> 
 
-                    <span id="voltar" class="material-symbols-outlined voltar">
+                    <span id="voltar" class="material-symbols-outlined voltar" tabindex="6">
                         keyboard_backspace
                     </span> 
 
-                    <span id='recarregar' class="material-symbols-outlined recarregar">
+                    <span id='recarregar' class="material-symbols-outlined recarregar" tabindex="9">
                         restart_alt
                     </span>
 
                 </header>
 
 
-                <div id="divdesafio">
+                <div id="divdesafio" tabindex="4">
 
                     <img src="midias/img/logoHtml.png" alt="logo do html" width="200px">
 
@@ -74,7 +74,7 @@
 
                 </div>
 
-                <div id="complemento" class="">
+                <div id="complemento" class="" tabindex="5">
 
                     <img src="midias/img/logoBug.png" width="200px">
 
@@ -85,9 +85,9 @@
 
             </section>
 
-            <section id="secaoAjuda" class="content"> 
+            <section id="secaoAjuda" class="content" tabindex="7"> 
 
-                <span id="voltarAjuda" class="material-symbols-outlined voltar">
+                <span id="voltarAjuda" class="material-symbols-outlined voltar" tabindex="8">
                     keyboard_backspace
                 </span> 
 
@@ -99,15 +99,17 @@
 
                 Ao escolher HTML por exemplo, o jogador verá um desafio aleatório de estrutura para montar na linguagem e logo abaixo um Patch (Sorte) que dará alguma vantagem no desenvolvimento ou um Bug (revés) que dará alguma dificuldade. 
 
-                Ao escolher outras linguagens terá desafios que complementam o HTML.
+                Ao escolher outras linguagens terá desafios que complementam o HTML.<br><br> 
 
+                A cada 1 hora será gerado um novo desafio e Patch/Bug. Adapte as regras de acordo com a necessidade da turma.
                 </p>
+
 
             </section>
 
         </main>     
 
-        <footer id="rodape"> 
+        <footer id="rodape" tabindex="8"> 
             &copy; Site educacional <br><strong> Professor Gustavo Gonçalves</strong>
         </footer>
         
