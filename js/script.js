@@ -6,6 +6,7 @@ const comecar = document.querySelector('#comecar');
 const telaInicial = document.querySelector('#telaInicial');
 const escolherDesafio = document.querySelector('#escolherDesafio');
 const desafio = document.querySelector('#desafio');
+const ajuda = document.querySelector('#secaoAjuda');
 
 //Dicionário de titulos e desafios
 
@@ -82,9 +83,6 @@ var css = ['Organize o layout da página para que o menu de navegação fique fi
 const jsTitulo = ['Menu de Navegação Responsivo', 'Exibição de Modal ao Clicar em Botão', 'Carrossel de Imagens', 'Formulário de Validação em Tempo Real', 'Scroll Suave para Âncoras', 'Accordion Interativo', 'Efeito de Animação em Rolagem', 'Contador Regressivo', 'Sistema de Filtro de Produtos', 'Popup de Boas-Vindas', 'Sistema de Avaliação com Estrelas', 'Alternância de Temas Claro/Escuro', 'Carrossel de Testemunhos', 'Desbloqueio de Conteúdo ao Rolamento', 'Acesso Condicional com Login', 'Interatividade com Elementos de Página', 'Animação de Texto ao Carregar a Página'];
 
 const js= ['Adicione um menu de navegação que se expande e contrai quando o usuário clica em um botão de hambúrguer adaptando-se a diferentes tamanhos de tela.','Crie um modal que aparece quando o usuário clica em um botão e pode ser fechado com um botão de fechar ou ao clicar fora do modal.','Desenvolva um carrossel de imagens que permite aos usuários navegar entre diferentes imagens usando setas de navegação ou indicadores de página.','Implemente validação em tempo real em um formulário para verificar a validade dos campos enquanto o usuário preenche o formulário e exibir mensagens de erro.','Adicione um efeito de rolagem suave quando o usuário clica em um link de âncora levando-o suavemente para a seção correspondente da página.','Crie um painel de acordeão onde cada seção pode ser expandida ou contraída ao clicar revelando ou ocultando conteúdo adicional.','Adicione animações que são ativadas quando o usuário rola a página para uma determinada seção como efeitos de desvanecimento ou deslizar.','Implemente um contador regressivo que conta o tempo restante para um evento ou oferta especial atualizando o tempo em tempo real.','Adicione um sistema de filtro que permite aos usuários selecionar diferentes opções para filtrar uma lista de produtos ou itens exibidos na página.','Exiba um popup de boas-vindas quando um usuário visita a página pela primeira vez ou após um certo período de tempo com a opção de fechar.','Crie um sistema de avaliação com estrelas onde os usuários podem clicar para avaliar um produto ou serviço com feedback visual das estrelas selecionadas.','Implemente um botão que permite aos usuários alternar entre temas claro e escuro ajustando o estilo da página conforme a escolha.','Desenvolva um carousel de testemunhos que apresenta um depoimento de cada vez e permite navegar entre diferentes depoimentos com setas de navegação.','Adicione um efeito onde o conteúdo adicional é revelado conforme o usuário rola para baixo na página proporcionando uma experiência de leitura contínua.','Desenvolva um sistema que permite aos usuários acessar certas partes do site somente após fazer login com redirecionamento e mensagens de erro apropriadas.','Adicione interatividade a elementos da página, como mostrar ou ocultar informações adicionais quando o usuário clica em um botão ou imagem.','Crie uma animação para o texto que aparece na página quando o usuário carrega a página como um efeito de desvanecimento ou deslizamento.'];
-    
-
- 
 
 const bugTitulo = ['Perca de tempo', 'Sem teclado', 'Editor Neolítico', 'Demissão celestial', 'Grupo dividido', 'Vendo pelos ouvidos', 'Burnout: mais é sempre bom', 'Burnout: inspiração do nada', 'Editor paleolítico', 'Sem mãos', 'Sem falar', 'Alfazar', 'Escrita in line', 'Quebra de redação', 'Burnout: grupo desfeito', 'Burnout: perfeccionismo no wireframe', 'Acho que tá exagerado', 'Eu escolho o layout', 'Eu escolho o layout', 'Eu escolho o layout', 'Erro amigo', 'Burnout: Desfazer o desfeito', 'Isso é um Crime', 'Burnout: Esqueça seu desafio', 'Burnout: pegue outro desafio'];
 
@@ -104,7 +102,9 @@ const btnJs = document.querySelector('#javascript');
 const btnVoltar = document.querySelector('#voltar');
 const btnRecarregar = document.querySelector('#recarregar');
 const btnRodape = document.querySelector('#rodape');
-
+const btnVoltarAjuda = document.querySelector('#voltarAjuda');
+const btnAjuda = document.querySelector('#ajuda');
+const btnVoltarEscolher = document.querySelector('#voltarEscolher');
 
 
 //troca de sections
@@ -209,6 +209,22 @@ btnVoltar.addEventListener('click', ()=>{
     escolherDesafio.style.display = 'block';
     desafio.style.display = 'none';
 });
+
+btnVoltarAjuda.addEventListener('click', ()=>{
+    telaInicial.style.display = 'block';
+    ajuda.style.display = 'none';
+});
+
+btnVoltarEscolher.addEventListener('click', ()=>{
+    telaInicial.style.display = 'block';
+    escolherDesafio.style.display = 'none';
+});
+
+btnAjuda.addEventListener('click', ()=>{
+    telaInicial.style.display = 'none';
+    ajuda.style.display = 'block';
+});
+
 
 btnRodape.addEventListener('click', ()=>{
     window.location.reload();
