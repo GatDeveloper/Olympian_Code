@@ -1,3 +1,26 @@
+//audios 
+var mute = true;
+
+const selectAudio = document.querySelector('#select_your_champion');
+const fightAudio = document.querySelector('#_fight');
+const botaoAudio = document.querySelector('#botaoAudio');
+const bugAudio = document.querySelector('#bugAudio');
+const cssAudio = document.querySelector('#cssAudio');
+const desafioAudio = document.querySelector('#desafioAudio');
+const escolherDesafioAudio = document.querySelector('#escolherDesafioAudio');
+const htmlAudio = document.querySelector('#htmlAudio');
+const jsAudio = document.querySelector('#jsAudio');
+const olimpyanCodeAudio = document.querySelector('#olimpyanCodeAudio');
+const patchAudio = document.querySelector('#patchAudio');
+const trocarAudio = document.querySelector('#trocarAudio');
+
+//audio do inicio
+
+window.addEventListener('load', ()=> {
+    olimpyanCodeAudio.play();
+});
+
+
 //botão começar
 const comecar = document.querySelector('#comecar');
 
@@ -105,99 +128,172 @@ const btnRodape = document.querySelector('#rodape');
 const btnVoltarAjuda = document.querySelector('#voltarAjuda');
 const btnAjuda = document.querySelector('#ajuda');
 const btnVoltarEscolher = document.querySelector('#voltarEscolher');
+const btnMute = document.querySelector('#mute');
+const btnSom = document.querySelector('#som');
+const btnRcomplemento = document.querySelector('#rComplemento');
+
+
+function testar(){
+    alert('ola');
+}
+
+console.log(btnRcomplemento);
+
+btnRcomplemento.addEventListener('click', testar);
 
 
 //troca de sections
 
 comecar.addEventListener('click', ()=>{
+    botaoAudio.play();
+    olimpyanCodeAudio.pause();
+    escolherDesafioAudio.play();
+
     telaInicial.style.display = 'none';
     escolherDesafio.style.display = 'block';
 });
 
-function desafioHtml(){
-    escolherDesafio.style.display = 'none';
-    desafio.style.display = 'block';
-
-    let aleatorio = Math.floor(Math.random()*32);
-    let divdesafio = document.querySelector('#divdesafio');
+function complemento(){
+    
+    let aleatorio = Math.random();
     let complemento = document.querySelector('#complemento');
-
-    divdesafio.innerHTML =`<img src="midias/img/logoHtml.png" alt="logo do html" width="200px"><h1> ${htmlTitulo[aleatorio]} </h1><h2>${html[aleatorio]}</h2>`;
 
     aleatorio = Math.random();
     complemento.className = '';
 
     if(aleatorio > 0.5 ){
         let aleatorio = Math.floor(Math.random()*25);
-        complemento.innerHTML = `<img src="midias/img/logoBug.png" width="200px"><h1> ${bugTitulo[aleatorio]} </h1><h2>${bug[aleatorio]}</h2>`;
+        complemento.innerHTML = `<div><span id='rComplemento' class="material-symbols-outlined">refresh</span></div><img src="midias/img/logoBug.png" width="200px"><h1> ${bugTitulo[aleatorio]} </h1><h2>${bug[aleatorio]}</h2>`;
         complemento.classList.add('Bug');;
+
+        
+        patchAudio.pause();
+        patchAudio.currentTime= 0;
+        bugAudio.currentTime= 0;
+        bugAudio.play();
     }else{
         let aleatorio = Math.floor(Math.random()*25);
-        complemento.innerHTML = `<img src="midias/img/logoPatch.png" width="200px"><h1> ${patchTitulo[aleatorio]} </h1><h2>${patch[aleatorio]}</h2>`;
+        complemento.innerHTML = ` <div><span id='rComplemento' class="material-symbols-outlined">refresh</span></div><img src="midias/img/logoPatch.png" width="200px"><h1> ${patchTitulo[aleatorio]} </h1><h2>${patch[aleatorio]}</h2>`;
         complemento.classList.add('Patch');
+        
+        bugAudio.pause();
+        bugAudio.currentTime= 0;
+        patchAudio.currentTime= 0;
+        patchAudio.play();
     }
 
+}
+
+function desafioHtml(){
+
+    escolherDesafio.style.display = 'none';
+    desafio.style.display = 'block';
+
+    escolherDesafioAudio.pause();
+    
+    if(mute){
+        htmlAudio.play();
+        htmlAudio.volume= '0.3';
+    }
+
+
+    let aleatorio = Math.floor(Math.random()*32);
+    let divdesafio = document.querySelector('#divdesafio');
+
+    divdesafio.innerHTML =`<img src="midias/img/logoHtml.png" alt="logo do html" width="200px"><h1> ${htmlTitulo[aleatorio]} </h1><h2>${html[aleatorio]}</h2>`;
+
+    complemento();
+
+
+    btnRecarregar.removeEventListener('click', desafioJs);
+    btnRecarregar.removeEventListener('click', desafioCss);
     btnRecarregar.addEventListener('click', desafioHtml);
 
 }
 
 function desafioCss(){
+
     escolherDesafio.style.display = 'none';
     desafio.style.display = 'block';
+    escolherDesafioAudio.pause();
+
+
+    if(mute){
+        cssAudio.play();
+        cssAudio.volume= '0.3';
+    }
 
     let aleatorio = Math.floor(Math.random()*24);
     let divdesafio = document.querySelector('#divdesafio');
-    let complemento = document.querySelector('#complemento');
-
+   
     divdesafio.innerHTML =`<img src="midias/img/logoCss.png" alt="logo do CSS" width="200px"><h1> ${cssTitulo[aleatorio]} </h1><h2>${css[aleatorio]}</h2>`;
 
-    aleatorio = Math.random();
-    complemento.className = '';
+    complemento();
 
-    if(aleatorio > 0.5 ){
-        let aleatorio = Math.floor(Math.random()*25);
-        complemento.innerHTML = `<img src="midias/img/logoBug.png" width="200px"><h1> ${bugTitulo[aleatorio]} </h1><h2>${bug[aleatorio]}</h2>`;
-        complemento.classList.add('Bug');;
-    }else{
-        let aleatorio = Math.floor(Math.random()*25);
-        complemento.innerHTML = `<img src="midias/img/logoPatch.png" width="200px"><h1> ${patchTitulo[aleatorio]} </h1><h2>${patch[aleatorio]}</h2>`;
-        complemento.classList.add('Patch');
-    }
-
+    btnRecarregar.removeEventListener('click', desafioJs);
+    btnRecarregar.removeEventListener('click', desafioHtml);
     btnRecarregar.addEventListener('click', desafioCss);
-
 
 }
 
 function desafioJs(){
+
     escolherDesafio.style.display = 'none';
     desafio.style.display = 'block';
+    escolherDesafioAudio.pause();
+
+    if(mute){
+        escolherDesafioAudio.pause();
+        jsAudio.play();
+        jsAudio.volume= '0.3';
+    }
 
     let aleatorio = Math.floor(Math.random()*17);
     let divdesafio = document.querySelector('#divdesafio');
-    let complemento = document.querySelector('#complemento');
-
     divdesafio.innerHTML =`<img src="midias/img/logoJavascript.png" alt="logo do JavaScript" width="200px"><h1> ${jsTitulo[aleatorio]} </h1><h2>${js[aleatorio]}</h2>`;
 
-    aleatorio = Math.random();
-    complemento.className = '';
+    complemento();
 
-    if(aleatorio > 0.5 ){
-        let aleatorio = Math.floor(Math.random()*25);
-        complemento.innerHTML = `<img src="midias/img/logoBug.png" width="200px"><h1> ${bugTitulo[aleatorio]} </h1><h2>${bug[aleatorio]}</h2>`;
-        complemento.classList.add('Bug');;
-    }else{
-        let aleatorio = Math.floor(Math.random()*25);
-        complemento.innerHTML = `<img src="midias/img/logoPatch.png" width="200px"><h1> ${patchTitulo[aleatorio]} </h1><h2>${patch[aleatorio]}</h2>`;
-        complemento.classList.add('Patch');
-    }
-
+    btnRecarregar.removeEventListener('click', desafioHtml);
+    btnRecarregar.removeEventListener('click', desafioCss);
     btnRecarregar.addEventListener('click', desafioJs);
 
 
 }
 
 //eventos
+
+btnMute.addEventListener('click', ()=>{
+    btnMute.style.display = 'none';
+    btnSom.style.display = 'block';
+
+    botaoAudio.play();
+   
+    htmlAudio.volume= '1';
+    cssAudio.volume= '1';
+    jsAudio.volume= '1';
+    olimpyanCodeAudio.volume= '1';
+    escolherDesafioAudio.volume= '1';
+
+    mute = true;
+
+});
+
+btnSom.addEventListener('click', ()=>{
+    btnMute.style.display = 'block';
+    btnSom.style.display = 'none';
+
+    botaoAudio.play();
+   
+    htmlAudio.volume= '0';
+    cssAudio.volume= '0';
+    jsAudio.volume= '0';
+    olimpyanCodeAudio.volume= '0';
+    escolherDesafioAudio.volume= '0';
+
+    mute= false;
+});
+
 
 btnHtml.addEventListener('click', desafioHtml, false);
 btnCss.addEventListener('click', desafioCss, false);
@@ -206,26 +302,51 @@ btnJs.addEventListener('click', desafioJs, false);
 
 
 btnVoltar.addEventListener('click', ()=>{
+    
+    botaoAudio.play();
+    patchAudio.pause();
+    htmlAudio.pause();
+    cssAudio.pause();
+    jsAudio.pause();
+    bugAudio.pause();
+
+    if(mute){
+        escolherDesafioAudio.play();
+    }
+
+
     escolherDesafio.style.display = 'block';
     desafio.style.display = 'none';
 });
 
 btnVoltarAjuda.addEventListener('click', ()=>{
+    botaoAudio.play();
     telaInicial.style.display = 'block';
     ajuda.style.display = 'none';
 });
 
 btnVoltarEscolher.addEventListener('click', ()=>{
+
+    botaoAudio.play();
+
+    if(mute){
+
+        olimpyanCodeAudio.play();
+        escolherDesafioAudio.pause();
+    }
+        
     telaInicial.style.display = 'block';
     escolherDesafio.style.display = 'none';
 });
 
 btnAjuda.addEventListener('click', ()=>{
+    botaoAudio.play();
     telaInicial.style.display = 'none';
     ajuda.style.display = 'block';
 });
 
 
 btnRodape.addEventListener('click', ()=>{
+    botaoAudio.play();
     window.location.reload();
 });
