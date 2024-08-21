@@ -197,11 +197,6 @@ footer{
 
 @media(max-width: 600px){
 
-    span.material-symbols-outlined.som {
-        left: 86vw;
-    }
-
-
     body{
         background-image: url(../midias/img/fundoCel.jpg);
         background-attachment: inherit;
@@ -231,6 +226,13 @@ footer{
     img{
         margin: 0px -45px 0px 0px;
     }
-   
-    
+
+    span.material-symbols-outlined {
+    font-size: 1rem;
+    }
+       
+    span.material-symbols-outlined.som {
+        left: 88vw;
+    }
+
 }
