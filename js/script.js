@@ -271,8 +271,7 @@ function desafioJs(){
 
     let aleatorio = Math.floor(Math.random()*17);
     let divdesafio = document.querySelector('#divdesafio');
-    divdesafio.innerHTML =`<span id='rDesafioJs' class="material-symbols-outlined recarregar" tabindex="9">refresh</span><img src="midias/img/
-    logoJavascript.png" alt="logo do JavaScript" width="200px"><h1> ${jsTitulo[aleatorio]} </h1><h2>${js[aleatorio]}</h2>`;
+    divdesafio.innerHTML =`<span id='rDesafioJs' class="material-symbols-outlined recarregar" tabindex="9">refresh</span><img src="midias/img/logoJavascript.png" alt="logo do JavaScript" width="200px"><h1> ${jsTitulo[aleatorio]} </h1><h2>${js[aleatorio]}</h2>`;
 
     
     historico = 3;
