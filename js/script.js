@@ -133,16 +133,26 @@ const btnSom = document.querySelector('#som');
 const btnRcomplemento = document.querySelector('#rComplemento');
 
 
-function testar(){
-    alert('ola');
-}
+document.querySelector('#complemento').addEventListener('click', (event) => {
+    if(event.target.id === 'rComplemento') {
+        complemento();
+    }
+});
 
-console.log(btnRcomplemento);
-
-btnRcomplemento.addEventListener('click', testar);
-
+document.querySelector('#divdesafio').addEventListener('click', (event) => {
+ 
+    if(event.target.id === 'rDesafioHtml') {
+        desafioHtml();
+    }else if(event.target.id === 'rDesafioCss') {
+        desafioCss();
+    }else if(event.target.id === 'rDesafioJs') {
+        desafioJs();
+    }
+});
 
 //troca de sections
+
+var historico;
 
 comecar.addEventListener('click', ()=>{
     botaoAudio.play();
@@ -162,9 +172,9 @@ function complemento(){
     complemento.className = '';
 
     if(aleatorio > 0.5 ){
-        let aleatorio = Math.floor(Math.random()*25);
-        complemento.innerHTML = `<div><span id='rComplemento' class="material-symbols-outlined">refresh</span></div><img src="midias/img/logoBug.png" width="200px"><h1> ${bugTitulo[aleatorio]} </h1><h2>${bug[aleatorio]}</h2>`;
-        complemento.classList.add('Bug');;
+        aleatorio = Math.floor(Math.random()*25);
+        complemento.innerHTML = `<span id='rComplemento' class="material-symbols-outlined">refresh</span><img src="midias/img/logoBug.png" width="200px"><h1> ${bugTitulo[aleatorio]} </h1><h2>${bug[aleatorio]}</h2>`;
+        complemento.classList.add('Bug');
 
         
         patchAudio.pause();
@@ -172,8 +182,8 @@ function complemento(){
         bugAudio.currentTime= 0;
         bugAudio.play();
     }else{
-        let aleatorio = Math.floor(Math.random()*25);
-        complemento.innerHTML = ` <div><span id='rComplemento' class="material-symbols-outlined">refresh</span></div><img src="midias/img/logoPatch.png" width="200px"><h1> ${patchTitulo[aleatorio]} </h1><h2>${patch[aleatorio]}</h2>`;
+        aleatorio = Math.floor(Math.random()*25);
+        complemento.innerHTML = `<span id='rComplemento' class="material-symbols-outlined">refresh</span><img src="midias/img/logoPatch.png" width="200px"><h1> ${patchTitulo[aleatorio]} </h1><h2>${patch[aleatorio]}</h2>`;
         complemento.classList.add('Patch');
         
         bugAudio.pause();
@@ -181,6 +191,27 @@ function complemento(){
         patchAudio.currentTime= 0;
         patchAudio.play();
     }
+
+}
+
+function telaDesafio(idDesafio){
+
+    switch(idDesafio){
+
+        case 1:
+            desafioHtml();
+            break;
+        
+        case 2:
+            desafioCss();
+            break;
+
+        case 3:
+            desafioJs(); 
+            break;
+    }
+
+    complemento();
 
 }
 
@@ -200,14 +231,9 @@ function desafioHtml(){
     let aleatorio = Math.floor(Math.random()*32);
     let divdesafio = document.querySelector('#divdesafio');
 
-    divdesafio.innerHTML =`<img src="midias/img/logoHtml.png" alt="logo do html" width="200px"><h1> ${htmlTitulo[aleatorio]} </h1><h2>${html[aleatorio]}</h2>`;
+    divdesafio.innerHTML =`<span id='rDesafioHtml' class="material-symbols-outlined recarregar" tabindex="9">refresh</span><img src="midias/img/logoHtml.png" alt="logo do html" width="200px"><h1> ${htmlTitulo[aleatorio]} </h1><h2>${html[aleatorio]}</h2>`;
 
-    complemento();
-
-
-    btnRecarregar.removeEventListener('click', desafioJs);
-    btnRecarregar.removeEventListener('click', desafioCss);
-    btnRecarregar.addEventListener('click', desafioHtml);
+    historico =1;
 
 }
 
@@ -226,14 +252,9 @@ function desafioCss(){
     let aleatorio = Math.floor(Math.random()*24);
     let divdesafio = document.querySelector('#divdesafio');
    
-    divdesafio.innerHTML =`<img src="midias/img/logoCss.png" alt="logo do CSS" width="200px"><h1> ${cssTitulo[aleatorio]} </h1><h2>${css[aleatorio]}</h2>`;
+    divdesafio.innerHTML =`<span id='rDesafioCss' class="material-symbols-outlined recarregar" tabindex="9">refresh</span><img src="midias/img/logoCss.png" alt="logo do CSS" width="200px"><h1> ${cssTitulo[aleatorio]} </h1><h2>${css[aleatorio]}</h2>`;
 
-    complemento();
-
-    btnRecarregar.removeEventListener('click', desafioJs);
-    btnRecarregar.removeEventListener('click', desafioHtml);
-    btnRecarregar.addEventListener('click', desafioCss);
-
+    historico =2;
 }
 
 function desafioJs(){
@@ -250,18 +271,20 @@ function desafioJs(){
 
     let aleatorio = Math.floor(Math.random()*17);
     let divdesafio = document.querySelector('#divdesafio');
-    divdesafio.innerHTML =`<img src="midias/img/logoJavascript.png" alt="logo do JavaScript" width="200px"><h1> ${jsTitulo[aleatorio]} </h1><h2>${js[aleatorio]}</h2>`;
+    divdesafio.innerHTML =`<span id='rDesafioJs' class="material-symbols-outlined recarregar" tabindex="9">refresh</span><img src="midias/img/
+    logoJavascript.png" alt="logo do JavaScript" width="200px"><h1> ${jsTitulo[aleatorio]} </h1><h2>${js[aleatorio]}</h2>`;
 
-    complemento();
-
-    btnRecarregar.removeEventListener('click', desafioHtml);
-    btnRecarregar.removeEventListener('click', desafioCss);
-    btnRecarregar.addEventListener('click', desafioJs);
-
-
+    
+    historico = 3;
 }
 
 //eventos
+
+btnHtml.addEventListener('click', ()=> telaDesafio(1));
+btnCss.addEventListener('click', ()=> telaDesafio(2));
+btnJs.addEventListener('click', ()=> telaDesafio(3));
+
+btnRecarregar.addEventListener('click', ()=> telaDesafio(historico));
 
 btnMute.addEventListener('click', ()=>{
     btnMute.style.display = 'none';
@@ -293,13 +316,6 @@ btnSom.addEventListener('click', ()=>{
 
     mute= false;
 });
-
-
-btnHtml.addEventListener('click', desafioHtml, false);
-btnCss.addEventListener('click', desafioCss, false);
-btnJs.addEventListener('click', desafioJs, false);
-
-
 
 btnVoltar.addEventListener('click', ()=>{
     
